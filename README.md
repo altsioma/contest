@@ -1,27 +1,27 @@
 <p align="center">
+  <h3 align="center">Telegram Charts</h3>
   <p align="center">
     Приложение по мотивам конкурса от Telegram.
     <br />
-    <br />
-    <a href="demo.html">Демо страница проекта</a>
+    <a href="demo.html">View Demo</a>
     ·
-    <a href="https://github.com/altsioma/contest/issues">Сообщить об ошибках</a>
+    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
-## Содержание
+## Table of Contents
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+* [Getting Started](#getting-started)
   * [Installation](#installation)
 * [Contact](#contact)
 
-## О проекте
-
-### About the Project
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://altsioma.github.io/contest/demo.html)
 
@@ -40,8 +40,10 @@
 * [Emotion Styled Component](https://emotion.sh/docs/styled)
 * [Webpack](https://webpack.js.org/)
 
+<!-- GETTING STARTED -->
+## Getting Started
 
-## Попрбововать проект самостоятельно
+Что бы попробовать проект самостоятельно, необходимо сделать несколько шагов
 
 ### Installation
 
@@ -58,11 +60,8 @@ npm install
 npm run start
 ```
 
-
-## Автор
-
-### contact
-
+<!-- CONTACT -->
+## Contact
 
 Alexander Tsioma - a.tsioma84@gmail.com
 
