@@ -16,11 +16,12 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Getting Started](#getting-started)
   * [Installation](#installation)
 * [Contact](#contact)
 
-## About the Project
+## О проекте
+
+### About the Project
 
 [![Product Name Screen Shot][product-screenshot]](https://altsioma.github.io/contest/demo.html)
 
@@ -57,7 +58,11 @@ npm install
 npm run start
 ```
 
-## Contact
+
+## Автор
+
+### contact
+
 
 Alexander Tsioma - a.tsioma84@gmail.com
 
