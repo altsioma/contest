@@ -1,10 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <p align="center">
 
   <h3 align="center">Telegram Contest</h3>
@@ -13,11 +6,9 @@
     Приложение по мотивам конкурса от Telegram, реализован первый уровень заданий.
     <br />
     <br />
-    <a href="https://github.com/altsioma/contest">Демо страница проекта</a>
+    <a href="https://altsioma.github.io/contest/">Демо страница проекта</a>
     ·
-    <a href="https://github.com/altsioma/contest/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/altsioma/contest/issues">Request Feature</a>
+    <a href="https://github.com/altsioma/contest/issues">Сообщить об ошибках</a>
   </p>
 </p>
 
@@ -33,16 +24,15 @@
   * [Установка и запуск проекта](#installation)
 * [Контакты](#contact)
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## О проекте
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/altsioma/contest)
+[![Product Name Screen Shot][product-screenshot]](https://altsioma.github.io/contest/)
 
 Проект позволяет выводить значения любых числовых величин на временном графике, реализован линейный вывод данных: на оси X выводятся даты, на оси Y измеряемые значения, таким образом на графике можно видедть динамику изменения величин с течением времени. 
 
 В проекте не используются никакие дополнительные библиотеки обработки графики или UI компоненты. Все механизмы, принципы взаимодействия и UI компоненты реализованы самостоятельно. Построение графиков реализовано на SVG технологии.
+
+Реализовано переключение дневного и ночного режима просмотра.
 
 ### Стек технологий
 
@@ -54,22 +44,11 @@
 * [Webpack](https://webpack.js.org/)
 
 
-<!-- GETTING STARTED -->
 ## Попрбововать проект самостоятельно
-
-To get a local copy up and running follow these simple steps.
-
-### Предварительные настройки
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
 
 ### Установка и запуск проекта
 
-1. Клонируем репазиторий
+1. Клонируем репозиторий
 ```sh
 git clone https://github.com/altsioma/contest.git
 ```
