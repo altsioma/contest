@@ -8,6 +8,7 @@ export type ChartState = {
   position: RangePosititon;
   range: RangePosititon;
   charts: LineChart[];
+  isNightMode: boolean;
 };
 
 type Toggler = { name: string; status: boolean };
@@ -18,6 +19,7 @@ export const initialState: ChartState = {
   position: { left: 0, right: 0 },
   range: { left: 0, right: 0 },
   charts: [],
+  isNightMode: false,
 };
 
 export const parseChart = createAction("chart/parseChart");
@@ -26,6 +28,9 @@ export const chartSlice = createSlice({
   name: "app",
   initialState: initialState,
   reducers: {
+    switchTheme: (state, action: PayloadAction<boolean>) => {
+      state.isNightMode = action.payload;
+    },
     setChart: (state, action: PayloadAction<number>) => {
       state.activeChart = action.payload;
     },

@@ -10,6 +10,7 @@ import { SVGContainer } from "@/components/SVGContainer";
 import { ChartLine } from "@/components/ChartLine";
 import { actions } from "./reducer";
 import { filterByRange } from "./handlers";
+import { Global, css } from "@emotion/core";
 
 const mapStateToProps = (state: AppState) => ({
   loader: state.loader,
@@ -21,6 +22,7 @@ const mapDispatchToProps = {
   setChart: actions.setChart,
   setPosition: actions.setPosition,
   toggleActive: actions.toggleActive,
+  switchTheme: actions.switchTheme,
 };
 
 export type Props = ReturnType<typeof mapStateToProps> &
@@ -33,6 +35,7 @@ const ChartComponent: React.FC<Props> = ({
   setPosition,
   setChart,
   toggleActive,
+  switchTheme,
 }) => {
   const { loading, error } = loader;
   const { charts, activeChart } = app;
@@ -42,7 +45,25 @@ const ChartComponent: React.FC<Props> = ({
   }, [fetchStart]);
 
   return (
-    <>
+    <div>
+      <Global
+        styles={css`
+          body {
+            background-color: ${app.isNightMode ? `#242f3e` : `white`};
+          }
+        `}
+      />
+      <div style={{ textAlign: "right" }}>
+        <Toggler
+          onClick={(status: boolean) => {
+            switchTheme(status);
+          }}
+          label={"Night mode"}
+          color="rgb(16, 139, 227)"
+          isActive={app.isNightMode}
+        />
+      </div>
+
       {loading && <span>Please wait</span>}
       {error && <span>{error}</span>}
       {charts && charts.length > 0 && (
@@ -116,7 +137,7 @@ const ChartComponent: React.FC<Props> = ({
           </TogglerGroup>
         </ChartView>
       )}
-    </>
+    </div>
   );
 };
 
