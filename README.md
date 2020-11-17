@@ -20,13 +20,12 @@
 * [О проекте](#about-the-project)
   * [Стек технологий](#built-with)
 * [Попрбововать проект самостоятельно](#getting-started)
-  * [Предварительные настройки](#prerequisites)
   * [Установка и запуск проекта](#installation)
 * [Контакты](#contact)
 
 ## О проекте
 
-[![Product Name Screen Shot][product-screenshot]](https://altsioma.github.io/contest/)
+[![Product Name Screen Shot][product-screenshot]](https://altsioma.github.io/contest/demo.html)
 
 Проект позволяет выводить значения любых числовых величин на временном графике, реализован линейный вывод данных: на оси X выводятся даты, на оси Y измеряемые значения, таким образом на графике можно видедть динамику изменения величин с течением времени. 
 
