@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack-dev-server --mode development --hot",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src/",
     "test": "jest --coverage",
