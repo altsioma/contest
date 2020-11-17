@@ -6,7 +6,7 @@
     Приложение по мотивам конкурса от Telegram, реализован первый уровень заданий.
     <br />
     <br />
-    <a href="https://altsioma.github.io/contest/">Демо страница проекта</a>
+    <a href="demo.html">Демо страница проекта</a>
     ·
     <a href="https://github.com/altsioma/contest/issues">Сообщить об ошибках</a>
   </p>
