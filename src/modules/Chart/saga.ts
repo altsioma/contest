@@ -1,4 +1,4 @@
-import { put, select, takeLatest, fork, takeEvery } from "redux-saga/effects";
+import { put, select, takeLatest, fork } from "redux-saga/effects";
 import { loaderSlice } from "@/modules/Loader/reducer";
 import { selectArea, selectChartsData } from "@/modules/Loader/selectors";
 import { chartSlice } from "./reducer";

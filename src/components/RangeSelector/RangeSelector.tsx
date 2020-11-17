@@ -5,6 +5,7 @@ import { RangePosititon } from "@/types/range";
 
 export type HandlerModifier = {
   isLeft?: boolean;
+  isNight?: boolean;
 };
 
 const RangeContainer = styled.div`
@@ -27,7 +28,8 @@ const RangePreviewContainer = styled.div`
 
 const RangeMask = styled.div`
   pointer-events: none;
-  background: rgba(226, 238, 249, 0.6);
+  background: ${({ isNight }: HandlerModifier) =>
+    isNight ? `rgba(48, 66, 89, 0.6)` : `rgba(226, 238, 249, 0.6)`};
   position: absolute;
   top: 2px;
   bottom: 2px;
@@ -50,7 +52,8 @@ const RangeWindow = styled.div`
   cursor: grab;
   transition: opacity 0.3s;
   &:before {
-    background: #c0d1e1;
+    background: ${({ isNight }: HandlerModifier) =>
+      isNight ? `#56626D` : `#c0d1e1`};
     content: "";
     position: absolute;
     left: 14px;
@@ -60,7 +63,8 @@ const RangeWindow = styled.div`
     top: 0px;
   }
   &:after {
-    background: #c0d1e1;
+    background: ${({ isNight }: HandlerModifier) =>
+      isNight ? `#56626D` : `#c0d1e1`};
     content: "";
     position: absolute;
     left: 14px;
@@ -72,7 +76,8 @@ const RangeWindow = styled.div`
 `;
 
 const RangeHanlder = styled.div`
-  background: #c0d1e1;
+  background: ${({ isNight }: HandlerModifier) =>
+    isNight ? `#56626D` : `#c0d1e1`};
   position: absolute;
   width: 14px;
   top: 0px;
@@ -125,6 +130,7 @@ interface Props {
   position: RangePosititon;
   setPosition: (e: RangePosititon) => void;
   minRange?: number;
+  isNight: boolean;
 }
 
 export const RangeSelector: React.FC<Props> = ({
@@ -132,6 +138,7 @@ export const RangeSelector: React.FC<Props> = ({
   position,
   setPosition,
   minRange = 55,
+  isNight = false,
 }) => {
   const [draggableArea, setArea] = useState<DraggableArea>({
     min: 0,
@@ -185,11 +192,14 @@ export const RangeSelector: React.FC<Props> = ({
   return (
     <RangeContainer ref={containerRef}>
       <RangePreviewContainer>{children}</RangePreviewContainer>
-      <RangeMask style={{ width: position.left }} isLeft />
-      <RangeMask style={{ width: position.right }} />
-      <RangeWindowMovie style={{ left: position.left, right: position.right }}>
-        <LeftHandler isLeft></LeftHandler>
-        <RightHandler></RightHandler>
+      <RangeMask style={{ width: position.left }} isLeft isNight={isNight} />
+      <RangeMask style={{ width: position.right }} isNight={isNight} />
+      <RangeWindowMovie
+        isNight={isNight}
+        style={{ left: position.left, right: position.right }}
+      >
+        <LeftHandler isNight={isNight} isLeft></LeftHandler>
+        <RightHandler isNight={isNight}></RightHandler>
       </RangeWindowMovie>
     </RangeContainer>
   );

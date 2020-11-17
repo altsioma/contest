@@ -1,8 +1,8 @@
 import { AppState } from "@/store";
-import { Transform } from "@/types";
+import { RangePosititon } from "@/types";
 import { calcTransformRange } from "./handlers";
 
-export const selectTransform = (state: AppState): Transform =>
+export const selectTransform = (state: AppState): RangePosititon =>
   calcTransformRange(state.app.range, state.app.area);
 
 export const selectActiveChart = (state: AppState): number =>

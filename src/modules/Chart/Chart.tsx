@@ -90,7 +90,11 @@ const ChartComponent: React.FC<Props> = ({
             maxY={charts[activeChart].maxY}
           />
 
-          <RangeSelector position={app.position} setPosition={setPosition}>
+          <RangeSelector
+            isNight={app.isNightMode}
+            position={app.position}
+            setPosition={setPosition}
+          >
             <SVGContainer>
               {charts[activeChart].collection.map((chart, index) => (
                 <ChartLine
