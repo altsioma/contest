@@ -5,9 +5,9 @@
     <br />
     <a href="demo.html">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/altsioma/contest/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/altsioma/contest/issues">Request Feature</a>
   </p>
 </p>
 
