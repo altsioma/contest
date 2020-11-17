@@ -15,10 +15,10 @@
 ## Содержание
 
 * [About the Project](#about-the-project)
-  * [Стек технологий](#built-with)
-* [Попрбововать проект самостоятельно](#getting-started)
-  * [Установка и запуск проекта](#installation)
-* [Контакты](#Контакты)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+* [Contact](#contact)
 
 ## About the Project
 
@@ -30,7 +30,7 @@
 
 Реализовано переключение дневного и ночного режима просмотра.
 
-### Стек технологий
+### Built With
 
 * [React JS](https://ru.reactjs.org/)
 * [Redux](https://redux.js.org/)
@@ -42,7 +42,7 @@
 
 ## Попрбововать проект самостоятельно
 
-### Установка и запуск проекта
+### Installation
 
 1. Клонируем репозиторий
 ```sh
@@ -57,7 +57,7 @@ npm install
 npm run start
 ```
 
-## Контакты
+## Contact
 
 Alexander Tsioma - a.tsioma84@gmail.com
 
