@@ -11,7 +11,7 @@ export type ChartState = {
   isNightMode: boolean;
 };
 
-type Toggler = { name: string; status: boolean };
+export type Toggler = { name: string; status: boolean };
 
 export const initialState: ChartState = {
   area: { width: 800, height: 400 },
@@ -31,7 +31,7 @@ export const chartSlice = createSlice({
     switchTheme: (state, action: PayloadAction<boolean>) => {
       state.isNightMode = action.payload;
     },
-    setChart: (state, action: PayloadAction<number>) => {
+    setActiveChart: (state, action: PayloadAction<number>) => {
       state.activeChart = action.payload;
     },
     setPosition: (state, action: PayloadAction<RangePosititon>) => {

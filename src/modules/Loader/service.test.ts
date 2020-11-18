@@ -1,4 +1,4 @@
-import { data } from "@/data";
+import { data } from "@/../data";
 import { getData } from "./service";
 
 describe("Currency services tests cases", () => {

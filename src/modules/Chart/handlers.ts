@@ -54,11 +54,10 @@ export const filterByRange = (
   range: RangePosititon
 ): (number | string)[] => {
   if (range.left !== range.right) {
-    const a = array.slice(
-      Math.ceil(array.length * range.left),
-      Math.ceil(array.length * range.right)
+    return array.slice(
+      Math.floor(array.length * range.left),
+      Math.floor(array.length * range.right)
     );
-    return a;
   }
   return array;
 };
