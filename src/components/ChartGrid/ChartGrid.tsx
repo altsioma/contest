@@ -44,41 +44,37 @@ export const ChartGrid: React.FC<IGrid> = ({
   xAxis,
 }) => {
   const LinesCharts: JSX.Element[][] = [];
-  if (area.height) {
-    const numOfChartLines = 5;
-    const yStep = area.height / numOfChartLines;
-    const yLabelStep = (maxY ? maxY : area.height) / numOfChartLines;
-    let i = 0;
-    for (let step = 0; step <= area.height; step = step + yStep) {
-      LinesCharts.push([
-        <Fragment key={`y_${step}`}>
-          <ChartGridLine style={{ bottom: step, opacity: 1 }} />
-          <ChartLabel style={{ bottom: step, opacity: 1 }}>
-            {formatNumber(yLabelStep * i, true)}
-          </ChartLabel>
-        </Fragment>,
-      ]);
-      i++;
-    }
+  const numOfChartLines = 5;
+  const yStep = area.height / numOfChartLines;
+  const yLabelStep = maxY / numOfChartLines;
+  let i = 0;
+  for (let step = 0; step <= area.height; step = step + yStep) {
+    LinesCharts.push([
+      <Fragment key={`y_${step}`}>
+        <ChartGridLine style={{ bottom: step, opacity: 1 }} />
+        <ChartLabel style={{ bottom: step, opacity: 1 }}>
+          {formatNumber(yLabelStep * i, true)}
+        </ChartLabel>
+      </Fragment>,
+    ]);
+    i++;
   }
 
   const xLables: JSX.Element[] = [];
-  if (area.width && xAxis) {
-    let labelIndex = 0;
-    const labelWidth = 100;
-    const stepWidth = area.width / labelWidth;
-    const labelStep = Math.floor(xAxis.length / stepWidth);
-    for (let step = 0; step <= area.width; step = step + labelWidth) {
-      xLables.push(
-        <ChartLabel
-          key={`x_${step}`}
-          style={{ left: step, top: 5, width: labelWidth }}
-        >
-          {formatDate(parseFloat(xAxis[labelIndex] as string), false, true)}
-        </ChartLabel>
-      );
-      labelIndex += labelStep;
-    }
+  let labelIndex = 0;
+  const labelWidth = 100;
+  const stepWidth = area.width / labelWidth;
+  const labelStep = Math.floor(xAxis.length / stepWidth);
+  for (let step = 0; step < area.width; step = step + labelWidth) {
+    xLables.push(
+      <ChartLabel
+        key={`x_${step}`}
+        style={{ left: step, top: 5, width: labelWidth }}
+      >
+        {formatDate(parseFloat(xAxis[labelIndex] as string), false, true)}
+      </ChartLabel>
+    );
+    labelIndex += labelStep;
   }
   return (
     <>

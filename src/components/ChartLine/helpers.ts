@@ -9,14 +9,13 @@ export const normalize = (value: number, min: number, max: number): number =>
 export const dataToArea = (
   data: number[],
   area: IChartView,
-  offset = 0,
-  maxY: number
+  maxY: number = area.height
 ): GraphDataType => {
-  if (area.width && data.length) {
-    const xInterval = (area.width - offset) / data.length;
-    return [...data].map((val, i) => [
-      xInterval * i++ + offset,
-      normalize(val, 0, maxY) * (area.height ? area.height : 1),
+  if (data.length) {
+    const xInterval = area.width / data.length;
+    return data.map((val, i) => [
+      xInterval * i++,
+      normalize(val, 0, maxY) * area.height,
     ]);
   }
   return [];

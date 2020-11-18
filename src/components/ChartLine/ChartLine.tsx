@@ -2,19 +2,14 @@ import React, { useMemo } from "react";
 import { dataToArea } from "./helpers";
 import { IChartView } from "@/components/ChartView";
 
-interface ISVGCoordinates {
-  multiplier?: number;
-  data: number[];
-}
-
-export interface ISVGPath extends ISVGCoordinates {
+export interface ISVGPath extends React.SVGProps<HTMLOrSVGElement> {
   area: IChartView;
   stroke: string;
   style?: React.CSSProperties;
   strokeWidth: string;
-  transform?: string;
   isActive?: boolean;
   maxY: number;
+  data: number[];
 }
 
 export const ChartLine: React.FC<ISVGPath> = ({
@@ -28,7 +23,7 @@ export const ChartLine: React.FC<ISVGPath> = ({
 }) => {
   const stylePath = { ...style, opacity: isActive ? "1" : "0" };
   const toSVGCoordinates = useMemo(() => {
-    const chartData = dataToArea(data, area, 0, maxY);
+    const chartData = dataToArea(data, area, maxY);
     const d = [`M ${chartData[0][0]} ${chartData[0][1]}`];
     const collection = chartData.map((section: number[]): string => {
       const xSection = section[0];

@@ -1,4 +1,4 @@
-import { call, put, fork, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import { actions, fetchStart } from "./reducer";
 import { getData } from "./service";
 
@@ -12,10 +12,6 @@ export function* fetchData() {
   }
 }
 
-export function* watchRequest() {
-  yield takeLatest(fetchStart, fetchData);
-}
-
 export function* startSaga() {
-  yield fork(watchRequest);
+  yield takeLatest(fetchStart, fetchData);
 }

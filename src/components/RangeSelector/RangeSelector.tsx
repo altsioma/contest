@@ -130,7 +130,7 @@ interface Props {
   position: RangePosititon;
   setPosition: (e: RangePosititon) => void;
   minRange?: number;
-  isNight: boolean;
+  isNight?: boolean;
 }
 
 export const RangeSelector: React.FC<Props> = ({
