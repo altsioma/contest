@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React, { useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { withDraggable } from "./withDraggable";
@@ -26,7 +27,7 @@ const RangePreviewContainer = styled.div`
   left: 0;
 `;
 
-const RangeMask = styled.div`
+export const RangeMask = styled.div`
   pointer-events: none;
   background: ${({ isNight }: HandlerModifier) =>
     isNight ? `rgba(48, 66, 89, 0.6)` : `rgba(226, 238, 249, 0.6)`};
@@ -44,7 +45,7 @@ const RangeMask = styled.div`
     right: 0px;`}
 `;
 
-const RangeWindow = styled.div`
+export const RangeWindow = styled.div`
   position: absolute;
   top: 0px;
   height: 100%;
@@ -75,7 +76,7 @@ const RangeWindow = styled.div`
   }
 `;
 
-const RangeHanlder = styled.div`
+export const RangeHanlder = styled.div`
   background: ${({ isNight }: HandlerModifier) =>
     isNight ? `#56626D` : `#c0d1e1`};
   position: absolute;
@@ -130,7 +131,7 @@ interface Props {
   position: RangePosititon;
   setPosition: (e: RangePosititon) => void;
   minRange?: number;
-  isNight: boolean;
+  isNight?: boolean;
 }
 
 export const RangeSelector: React.FC<Props> = ({

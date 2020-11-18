@@ -1,4 +1,4 @@
-import { data } from "@/data";
+import { data } from "@/../data";
 import { sleep } from "@/utils/sleep";
 
 export const getData = async (): Promise<typeof data> => {

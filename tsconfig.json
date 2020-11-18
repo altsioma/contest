@@ -15,6 +15,6 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "scripts/**/*", "lessons/**/*"],
+  "include": ["src/**/*", "scripts/**/*", "lessons/**/*", "internals/__mocks__/data.ts"],
   "exclude": ["node_modules"]
 }

@@ -19,7 +19,7 @@ const mapStateToProps = (state: AppState) => ({
 
 const mapDispatchToProps = {
   fetchStart,
-  setChart: actions.setChart,
+  setChart: actions.setActiveChart,
   setPosition: actions.setPosition,
   toggleActive: actions.toggleActive,
   switchTheme: actions.switchTheme,

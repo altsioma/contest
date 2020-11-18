@@ -8,10 +8,14 @@
     "start": "webpack-dev-server --mode development --hot",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src/",
     "test": "jest --coverage",
-    "check": "npm run lint && npm run check-types && npm run test",
+    "check": "npm run lint && npm run test && npm run test:loki",
     "check-types": "tsc -p tsconfig.json --noEmit",
     "storybook": "start-storybook -p 6006 --no-dll",
-    "build-storybook": "build-storybook --no-dll"
+    "build-storybook": "build-storybook --no-dll",
+    "test:loki": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
+    "stryker": "stryker run",
+    "loki:update": "npm run build-storybook && npx loki update --requireReference --reactUri file:./storybook-static",
+    "loki:approve": "npx loki approve"
   },
   "repository": {
     "type": "git",
@@ -36,6 +40,8 @@
     "@storybook/addon-storysource": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@stryker-mutator/core": "^4.1.2",
+    "@stryker-mutator/jest-runner": "^4.1.2",
     "@types/enzyme": "^3.10.8",
     "@types/faker": "^5.1.4",
     "@types/jest": "^26.0.15",
@@ -91,14 +97,14 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
       }
     }
